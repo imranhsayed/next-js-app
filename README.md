@@ -16,6 +16,10 @@
 
 ## Instructions :point_right:
 
+## Branches Information :point_right:
+
+1. [shared-component-navigation](https://github.com/imranhsayed/next-js-app/tree/shared-component-navigation) Example to show navigation and Creating Layout Component that can be shared between multiple component.
+
 ## Common Commands :computer:
 
 1. `dev` Starts local development server at [http://localhost:3000](http://localhost:3000)
