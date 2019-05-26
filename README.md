@@ -19,6 +19,7 @@
 ## Branches Information :point_right:
 
 1. [shared-component-navigation](https://github.com/imranhsayed/next-js-app/tree/shared-component-navigation) Example to show navigation and Creating Layout Component that can be shared between multiple component.
+1. [dynamic-page-query-string](https://github.com/imranhsayed/next-js-app/tree/dynamic-page-query-string) Example to create dynamic post pages by extracting query string from url using `withRouter`
 
 ## Common Commands :computer:
 
