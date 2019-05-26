@@ -18,6 +18,10 @@
 
 ## Common Commands :computer:
 
+1. `dev` Starts local development server at [http://localhost:3000](http://localhost:3000)
+2. `build` Runs build
+3. `start` Runs next js server
+
 ## Built With :zap:
 
 1. Node
