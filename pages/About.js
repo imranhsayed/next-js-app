@@ -1,14 +1,9 @@
-import Link from "next/link";
+import Header from "./Header";
 
 export default function About() {
 	return (
 		<div>
-			<Link href="/" >
-				<a>Home Page</a>
-			</Link>
-			<Link href="/about" >
-				<a>About Page</a>
-			</Link>
+			<Header/>
 			<p>This is the about page</p>
 		</div>
 	)

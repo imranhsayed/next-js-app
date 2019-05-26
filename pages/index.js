@@ -1,16 +1,8 @@
-import Link from 'next/link';
+import Header from "./Header";
 
 const Index = () => (
 	<div>
-		{/*Add Nav Links*/}
-		<Link href="/" >
-			<a title="home page">Home Page</a>
-		</Link>
-		<Link href="/about" >
-			<a title="about page">About Page</a>
-		</Link>
-
-
+		<Header/>
 		<p>Hello Next.js</p>
 	</div>
 );
