@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-	"start": "NODE_ENV=production node server.js"
+	"start": "next start -p $PORT",
+	"now-build": "next build"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +18,7 @@
     "react-dom": "^16.8.6"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "isomorphic-unfetch": "^3.0.0"
   }
 }
