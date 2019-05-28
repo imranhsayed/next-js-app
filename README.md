@@ -42,6 +42,10 @@
 
 1. [Headless WordPress with Next JS](https://medium.com/kata-engineering/headless-wordpress-next-js-what-we-learned-c10abdf80f6a)
 
+# Useful Links
+
+1. [GraphQL API Plugin for WordPress](https://github.com/wp-graphql/wp-graphql)
+
 ## Author :bust_in_silhouette:
 
 * **[Imran Sayed](https://codeytek.com)**
