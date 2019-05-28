@@ -38,6 +38,10 @@
 5. Webpack
 6. Babel
 
+# Useful Blogs
+
+1. [Headless WordPress with Next JS](https://medium.com/kata-engineering/headless-wordpress-next-js-what-we-learned-c10abdf80f6a)
+
 ## Author :bust_in_silhouette:
 
 * **[Imran Sayed](https://codeytek.com)**
