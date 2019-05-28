@@ -11,10 +11,26 @@ app
 	.then(() => {
 		const server = express();
 
+		// Express server handlers
 		server.get('/p/:id', (req, res) => {
 			const actualPage = '/post';
 			const queryParams = { title: req.params.id };
 			app.render(req, res, actualPage, queryParams);
+		});
+
+		server.get('/post/:slug', (req, res) => {
+			const queryParams = { slug: req.params.slug, apiRoute: 'post' };
+			app.render(req, res, '/post', queryParams);
+		});
+
+		server.get('/page/:slug', (req, res) => {
+			const queryParams = { slug: req.params.slug, apiRoute: 'page' };
+			app.render(req, res, '/post', queryParams);
+		});
+
+		server.get('/category/:slug', (req, res) => {
+			const queryParams = { slug: req.params.slug };
+			app.render(req, res, '/category', queryParams);
 		});
 
 		// Fallback handler
