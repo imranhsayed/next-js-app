@@ -8,7 +8,6 @@ export default class Index extends React.Component {
 	// We use fetch from isomorphic-fetch inside our async function getInitialProps()
 	// and what is return by this function will be available as props to your Index Page.
 	static async getInitialProps( context ) {
-		console.warn( 'context Index', context );
 		const res = await fetch( 'https://api.tvmaze.com/search/shows?q=batman' );
 		const data = await res.json();
 
@@ -19,7 +18,7 @@ export default class Index extends React.Component {
 
 	render() {
 		// This will contain data
-		console.warn( 'cards', this.props.shows );
+		// console.warn( 'cards', this.props.shows );
 
 		return(
 			<div>

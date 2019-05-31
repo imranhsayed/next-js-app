@@ -14,7 +14,7 @@ const About = ( props ) => {
 };
 
 About.getInitialProps = async ( context ) => {
-	console.log( 'context', context );
+	// console.log( 'context', context );
 	const res = await fetch( 'https://api.tvmaze.com/search/shows?q=batman' );
 
 	// Once you get the response from fetch , you creat a json
