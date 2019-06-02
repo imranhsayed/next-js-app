@@ -18,10 +18,58 @@
 
 ## Branches Information :point_right:
 
-1. [shared-component-navigation](https://github.com/imranhsayed/next-js-app/tree/shared-component-navigation) Example to show navigation and Creating Layout Component that can be shared between multiple component.
-2. [dynamic-page-query-string](https://github.com/imranhsayed/next-js-app/tree/dynamic-page-query-string) Example to create dynamic post pages by extracting query string from url using `withRouter`
-3. [route-masking](https://github.com/imranhsayed/next-js-app/tree/route-masking) Example to show a different URL on the browser than the actual URL that your app sees by adding "as" props to the link.
+1. [simple-nextjs-app](https://github.com/imranhsayed/next-js-app/tree/simple-nextjs-app) Simple next js app
+2. [express-with-next)](https://github.com/imranhsayed/next-js-app/tree/express-with-next)) Simple next js app with custom express server
+3. [shared-component-navigation](https://github.com/imranhsayed/next-js-app/tree/shared-component-navigation) Example to show navigation and Creating Layout Component that can be shared between multiple component.
+4. [dynamic-page-query-string](https://github.com/imranhsayed/next-js-app/tree/dynamic-page-query-string) Example to create dynamic post pages by extracting query string from url using `withRouter`
+5. [route-masking](https://github.com/imranhsayed/next-js-app/tree/route-masking) Example to show a different URL on the browser than the actual URL that your app sees by adding "as" props to the link.
 
+## [Custom Express Configuration with next js](https://github.com/imranhsayed/next-js-app/tree/express-with-next)
+
+```ruby
+const express = require( 'express' );
+const next = require( 'next' );
+
+const port = 3000;
+const dev = process.env.NODE_ENV !== 'production';
+const app = next( { dev } );
+const handle = app.getRequestHandler();
+
+/**
+ * app (next js ) will prepare our server with express, and then,
+ * wrap express application inside next
+ *
+ */
+app.prepare()
+	.then( () => {
+		const server = express();
+
+		/**
+		 * This will override the default '/about' next js route and when user goes to '/about'
+		 * it will serve index.js because route '/' which we are rendering in app.render() belongs to index.js
+		 */
+		server.get( '/about', ( req, res ) => {
+			return app.render( req, res, '/' );
+		} );
+
+		/**
+		 * Wrapping express app inside next will allow us to create routes by using
+		 * express js function inside of the next js build
+		 *
+		 * '*' means all routes which are not explicit , use this route for them.
+		 */
+		server.get( '*', ( req, res ) => {
+			return handle( req, res );
+		} );
+
+		server.listen( port, ( err ) => {
+			if ( err ) {
+				throw err;
+			}
+			console.warn( `Ready on http://localhost:${port}` );
+		} );
+	} );
+```
 
 ## Common Commands :computer:
 
