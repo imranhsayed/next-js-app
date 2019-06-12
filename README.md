@@ -10,7 +10,7 @@
 3. `npm install`
 4. `npm run dev`
 
-## Useful Links :link:
+## Useful Links: :link:
 
 1. [Next JS Docs](https://nextjs.org/learn/basics/getting-started/setup)
 
