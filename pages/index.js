@@ -1,38 +1,25 @@
-import React from 'react';
-import './Style.css';
-import fetch from 'isomorphic-unfetch';
-import Link from 'next/link';
 
-export default class Index extends React.Component {
+import Link from 'next/link'
 
-	// We use fetch from isomorphic-fetch inside our async function getInitialProps()
-	// and what is return by this function will be available as props to your Index Page.
-	static async getInitialProps( context ) {
-		const res = await fetch( 'https://api.tvmaze.com/search/shows?q=batman' );
-		const data = await res.json();
+function PostLink(props) {
+	return (
+		<li>
+			<Link as={`/p/${props.slug}`} href={`/post?title=${props.title}`}>
+				<a>{props.title}</a>
+			</Link>
+		</li>
+	)
+}
 
-		return {
-			shows: data
-		};
-	}
-
-	render() {
-		// This will contain data
-		// console.warn( 'cards', this.props.shows );
-
-		return(
-			<div>
-				{/*Navigation*/}
-				<Link href="/"><a>Home</a></Link>
-				<Link href="/about"><a>About</a></Link>
-
-				{/*Heading*/}
-				<h1>React with Next JS</h1>
-
-				{/*Image*/}
-				<img src="/static/logo.png" width="200" alt="Logo"/>
-			</div>
-		)
-
-	}
+export default function Index() {
+	return (
+		<div>
+			<h1>My Blog</h1>
+			<ul>
+				<PostLink slug="hello-next-js" title="Hello Next.js" />
+				<PostLink slug="learn-next" title="Learn Next.js is awesome" />
+				<PostLink slug="deploy" title="Deploy apps with Zeit" />
+			</ul>
+		</div>
+	)
 }

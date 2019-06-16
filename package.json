@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-	"server": "node server.js"
+    "server": "node server.js"
   },
   "keywords": [],
   "author": "",

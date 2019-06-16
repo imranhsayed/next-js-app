@@ -15,13 +15,11 @@ app.prepare()
 	.then( () => {
 		const server = express();
 
-		/**
-		 * This will override the default '/about' next js route and when user goes to '/about'
-		 * it will serve index.js because route '/' which we are rendering in app.render() belongs to index.js
-		 */
-		server.get( '/about', ( req, res ) => {
-			return app.render( req, res, '/' );
-		} );
+		server.get('/p/:slug', (req, res) => {
+			const actualPage = '/post';
+			const queryParams = { title: req.params.slug };
+			app.render(req, res, actualPage, queryParams);
+		});
 
 		/**
 		 * Wrapping express app inside next will allow us to create routes by using
