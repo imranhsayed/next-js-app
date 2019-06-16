@@ -20,6 +20,7 @@
 
 1. [simple-nextjs-app](https://github.com/imranhsayed/next-js-app/tree/simple-nextjs-app) Simple next js app
 2. [express-with-next)](https://github.com/imranhsayed/next-js-app/tree/express-with-next)) Simple next js app with custom express server
+3. [express-with-next-ssr)](https://github.com/imranhsayed/next-js-app/tree/express-with-next-ssr)) Custom end point by creating express server, and displaying clean URL for single post ( `'/post/slug' instead of '/post?id=22'` )
 3. [shared-component-navigation](https://github.com/imranhsayed/next-js-app/tree/shared-component-navigation) Example to show navigation and Creating Layout Component that can be shared between multiple component.
 4. [dynamic-page-query-string](https://github.com/imranhsayed/next-js-app/tree/dynamic-page-query-string) Example to create dynamic post pages by extracting query string from url using `withRouter`
 5. [route-masking](https://github.com/imranhsayed/next-js-app/tree/route-masking) Example to show a different URL on the browser than the actual URL that your app sees by adding "as" props to the link.
