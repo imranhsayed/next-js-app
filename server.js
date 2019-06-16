@@ -15,11 +15,12 @@ app.prepare()
 	.then( () => {
 		const server = express();
 
-		server.get('/p/:slug', (req, res) => {
-			const actualPage = '/post';
-			const queryParams = { title: req.params.slug };
-			app.render(req, res, actualPage, queryParams);
-		});
+		server.get( '/p/:slug', ( req, res ) => {
+			const postId = parseInt( req.params.slug.split( '-' ).pop() );
+
+			const queryParams = { id: postId };
+			app.render( req, res, '/post', queryParams );
+		} );
 
 		/**
 		 * Wrapping express app inside next will allow us to create routes by using

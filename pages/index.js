@@ -1,25 +1,30 @@
+import PostLink from "../components/PostLink";
+import fetch from 'isomorphic-unfetch';
 
-import Link from 'next/link'
+const Index = ( props ) => {
 
-function PostLink(props) {
-	return (
-		<li>
-			<Link as={`/p/${props.slug}`} href={`/post?title=${props.title}`}>
-				<a>{props.title}</a>
-			</Link>
-		</li>
-	)
-}
+	const { posts } = props;
 
-export default function Index() {
 	return (
 		<div>
-			<h1>My Blog</h1>
-			<ul>
-				<PostLink slug="hello-next-js" title="Hello Next.js" />
-				<PostLink slug="learn-next" title="Learn Next.js is awesome" />
-				<PostLink slug="deploy" title="Deploy apps with Zeit" />
-			</ul>
+			{ posts.length && (
+				<ul>
+					{ posts.map( item => (
+						<PostLink key={item.id} id={ item.id } slug={ item.slug } title = { item.title.rendered } />
+					) ) }
+				</ul>
+			) }
 		</div>
 	)
-}
+};
+
+Index.getInitialProps = async () => {
+	const res = await fetch( 'http://codeytek.com/wp-json/wp/v2/posts/' );
+	const postsData = await res.json();
+
+	return {
+		posts: postsData
+	}
+};
+
+export default Index;

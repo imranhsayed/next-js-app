@@ -1,13 +1,23 @@
-const Post = ( props ) => {
+import fetch from 'isomorphic-unfetch';
 
-	console.warn( props );
+const Post = ( props ) => {
+	const { post } = props;
 
 	return (
-		<div>
-			{ props.url.query.title }
-		</div>
+		<div>{ post.title.rendered }</div>
 	)
 };
 
-export default Post;
+Post.getInitialProps = async ( context ) => {
 
+	const postId = context.query.id;
+
+	const res = await fetch( `http://codeytek.com/wp-json/wp/v2/posts/${ postId }` );
+	const postData = await res.json();
+
+	return {
+		post: postData
+	}
+};
+
+export default Post;
