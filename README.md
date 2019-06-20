@@ -1,7 +1,7 @@
 # Next JS Application
 
 ## Description :clipboard:
-> A Next JS Application Demo.
+> A Next JS Application Demo
 
 ## Installation :wrench:
 
